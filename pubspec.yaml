@@ -39,7 +39,8 @@ dependencies:
   get_it: ^7.6.0
   dio: ^5.4.3+1
   retrofit: ^4.1.0
-  freeze: ^1.0.0
+  freezed: ^2.4.1
+
 
 dev_dependencies:
   flutter_test:
