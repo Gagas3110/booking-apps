@@ -40,6 +40,21 @@ dependencies:
   dio: ^5.4.3+1
   retrofit: ^4.1.0
   freezed: ^2.4.1
+  google_fonts: ^4.0.4
+  firebase: ^9.0.3
+  flagsmith: ^5.0.1
+  dynatrace_flutter_plugin: ^3.287.2
+  firebase_core: ^2.24.2
+  logger: ^2.2.0
+  signature: ^5.4.1
+  firebase_crashlytics: ^3.4.9
+  firebase_messaging: ^14.7.10
+  firebase_remote_config: ^4.3.8
+  firebase_analytics: ^10.8.0
+  opentelemetry: ^0.18.2
+  rive: ^0.13.2
+  firebase_database: ^10.4.0
+  flutter_local_notifications: ^17.1.0
 
 
 dev_dependencies:
