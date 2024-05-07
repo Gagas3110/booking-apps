@@ -34,8 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        body: Column(
-          children: const [
+        body: const Column(
+          children: [
             Text('Explore this'),
             Text(
               'Fantastic Earth',
