@@ -55,6 +55,8 @@ dependencies:
   rive: ^0.13.2
   firebase_database: ^10.4.0
   flutter_local_notifications: ^17.1.0
+  getwidget: ^4.0.0
+  cloud_firestore: ^4.14.0
 
 
 dev_dependencies:
