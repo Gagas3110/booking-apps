@@ -1,7 +1,6 @@
 library booking_home;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/presentation/home_page.dart';
+
+export 'package:carousel_slider/carousel_slider.dart';
+export 'package:flutter_bloc/flutter_bloc.dart';
