@@ -27,7 +27,7 @@ class HomeRepository implements IHomeRepository {
   @override
   Future<Either<Failure, List<Product>>> getFlashSale() async {
     try {
-      final result = await homeApi.getProducts();
+      final result = await homeApi.getFlashSaleProduct();
       final products = List<Product>.from(
         result.products.map((x) => x.toDomain()),
       );
