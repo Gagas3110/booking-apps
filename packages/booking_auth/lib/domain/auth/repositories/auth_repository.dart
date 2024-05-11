@@ -13,4 +13,5 @@ abstract class AuthRepository {
   ///
 
   Future<Either<Failure, LoginResponse>> getLoginResponse(LoginRequest req);
+  Future<LoginResponse> getLoginResponseFromLocal();
 }

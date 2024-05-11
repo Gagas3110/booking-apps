@@ -1,5 +1,10 @@
 import 'package:booking_apps/src/presentation/screen/welcome_package_screen.dart';
+import 'package:booking_auth/application/login/login_bloc.dart';
+import 'package:booking_auth/booking_auth.dart';
+import 'package:booking_auth/injection.dart';
+import 'package:booking_home/booking_home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,19 +15,50 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => getIt<LoginBloc>()..add(const ChackLogin()),
+      child: const SplashBody(),
+    );
+  }
+}
+
+class SplashBody extends StatefulWidget {
+  const SplashBody({super.key});
+
+  @override
+  State<SplashBody> createState() => _SplashBodyState();
+}
+
+class _SplashBodyState extends State<SplashBody> {
+  @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const WelcomePackageScreen()));
-    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     const assetImage = "assets/image/booking_logo.png";
-    return Scaffold(
-      body: Center(
-        child: Image.asset(assetImage),
+    return BlocListener<LoginBloc, LoginState>(
+      listener: (context, state) {
+        if (state is IsLoginState) {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => const HomePage()));
+        }
+        if (state is NotLoginState) {
+          Future.delayed(
+            const Duration(seconds: 2),
+            () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const WelcomePackageScreen()));
+            },
+          );
+        }
+      },
+      child: Scaffold(
+        body: Center(
+          child: Image.asset(assetImage),
+        ),
       ),
     );
   }

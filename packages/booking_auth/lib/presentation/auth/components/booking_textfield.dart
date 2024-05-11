@@ -30,9 +30,9 @@ class BookingFormTextField extends StatelessWidget {
       this.onTap,
       this.controller,
       this.enabled,
-      this.maxLine,
+      this.maxLine = 1,
       this.maxLength,
-      this.obsecure,
+      this.obsecure = false,
       this.formatter});
 
   @override
