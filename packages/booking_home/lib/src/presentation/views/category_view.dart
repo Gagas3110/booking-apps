@@ -1,9 +1,9 @@
+import 'package:booking_home/src/application/category/category_bloc.dart';
 import 'package:booking_home/src/domain/i_home_repository.dart';
 import 'package:booking_home/src/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../application/category/category_bloc.dart';
 import '../widgets/category_item.dart';
 
 class CategoryView extends StatelessWidget {

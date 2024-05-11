@@ -10,7 +10,7 @@ abstract class HomeApi {
   factory HomeApi(Dio dio, {String baseUrl}) = _HomeApi;
 
   @GET('')
-  Future<FlashSaleResponse> getProducts();
+  Future<FlashSaleResponse> getFlashSaleProduct();
 
   @GET('/categories')
   Future<List<String>> getCategories();
