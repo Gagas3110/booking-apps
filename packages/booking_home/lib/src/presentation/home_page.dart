@@ -19,7 +19,6 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: const [
-          // SvgPicture.asset('assets/icon_logo.svg'),
           BannerView(),
           CategoryView(),
           FlashSaleView(),

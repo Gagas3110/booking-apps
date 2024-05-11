@@ -1,3 +1,5 @@
+import 'package:booking_home/src/domain/i_home_repository.dart';
+import 'package:booking_home/src/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,7 +12,9 @@ class CategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => CategoryBloc()..add(const CategoryEvent.onBuild()),
+      create: (_) => CategoryBloc(
+        repository: di<IHomeRepository>(),
+      )..add(const CategoryEvent.onBuild()),
       child: BlocBuilder<CategoryBloc, CategoryState>(
         builder: (context, state) {
           final categoryList = state.categoryList;
