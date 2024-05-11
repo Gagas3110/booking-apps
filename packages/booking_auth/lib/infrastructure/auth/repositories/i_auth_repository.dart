@@ -35,6 +35,13 @@ class IAuthRepository implements AuthRepository {
         final loginData = await _loginApi.login(req.toJson());
         await _loginLocalDataSource.cacheLoginInLocalStorage(loginData);
         return Right(loginData);
+
+        ////Note : Why we decide to didnt use toDomain() method ?
+        ///because DTO extends from entity and then will be parsed automatically
+        ///but, i'll be place the code commented below how to convert it manually (if u want do it manually)
+
+        ///final albumsConverted = albumsData.map((e) => e.toDomain()).toList();
+        ///return Right(albumsConverted);
       } on ServerException {
         return const Left(Failure.serverFailure(serverFailureMessages));
       }
