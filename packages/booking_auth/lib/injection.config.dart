@@ -15,6 +15,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i5;
 import 'package:shared_preferences/shared_preferences.dart' as _i3;
 
+import 'application/login/login_bloc.dart' as _i13;
 import 'domain/auth/repositories/auth_repository.dart' as _i11;
 import 'domain/core/network/network_info.dart' as _i8;
 import 'infrastructure/auth/datasources/local/auth/i_login_local_datasource.dart'
@@ -22,10 +23,10 @@ import 'infrastructure/auth/datasources/local/auth/i_login_local_datasource.dart
 import 'infrastructure/auth/datasources/local/auth/login_local_datasources.dart'
     as _i6;
 import 'infrastructure/auth/datasources/remote/api/login_api.dart' as _i10;
-import 'infrastructure/auth/datasources/remote/di/register_api.dart' as _i14;
+import 'infrastructure/auth/datasources/remote/di/register_api.dart' as _i15;
 import 'infrastructure/auth/repositories/i_auth_repository.dart' as _i12;
 import 'infrastructure/core/i_network_info.dart' as _i9;
-import 'infrastructure/core/injection_module.dart' as _i13;
+import 'infrastructure/core/injection_module.dart' as _i14;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -58,10 +59,11 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i8.NetworkInfo>(),
           gh<_i6.LoginLocalDataSource>(),
         ));
+    gh.factory<_i13.LoginBloc>(() => _i13.LoginBloc(gh<_i11.AuthRepository>()));
     return this;
   }
 }
 
-class _$InjectionModules extends _i13.InjectionModules {}
+class _$InjectionModules extends _i14.InjectionModules {}
 
-class _$RegisterApi extends _i14.RegisterApi {}
+class _$RegisterApi extends _i15.RegisterApi {}

@@ -13,6 +13,7 @@ class LoginReqDto extends LoginRequest {
   factory LoginReqDto.fromJson(Map<String, dynamic> json) =>
       _$LoginReqDtoFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LoginReqDtoToJson(this);
 
   LoginRequest toDomain() => LoginRequest(

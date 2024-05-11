@@ -91,41 +91,6 @@ class _WelcomePackageScreenState extends State<WelcomePackageScreen> {
       backgroundColor: Colors.grey.shade100,
       body: Column(
         children: <Widget>[
-          // ResponsiveSizeBox(
-          //   child: Align(
-          //     alignment: Alignment.topRight,
-          //     child: Padding(
-          //       padding: const EdgeInsets.all(16),
-          //       child: Container(
-          //         decoration: BoxDecoration(
-          //             color: Colors.orange,
-          //             borderRadius: BorderRadius.circular(16.0)),
-          //         child: Padding(
-          //           padding: const EdgeInsets.symmetric(
-          //             vertical: 8,
-          //             horizontal: 16,
-          //           ),
-          //           child: GestureDetector(
-          //             onTap: () {
-          //               // CeriaNavigator.pushReplacementNamed(
-          //               //   CeriaRoute.onboarding,
-          //               // );
-          //             },
-          //             child: Text(
-          //               'Lewati',
-          //               style: Theme.of(context)
-          //                   .primaryTextTheme
-          //                   .bodySmall
-          //                   ?.copyWith(
-          //                       fontWeight: FontWeight.bold,
-          //                       color: Colors.white),
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
           Expanded(
             child: PageView.builder(
               controller: pageC,
@@ -137,13 +102,6 @@ class _WelcomePackageScreenState extends State<WelcomePackageScreen> {
                   margin:
                       const EdgeInsets.only(left: 14, right: 14, bottom: 14),
                   child: image,
-
-                  // Image.asset(
-                  //   image.assetName,
-                  //   fit: BoxFit.scaleDown,
-                  //   width: double.infinity,
-                  //   package: image.package,
-                  // ),
                 );
               },
             ),
@@ -163,7 +121,7 @@ class _WelcomePackageScreenState extends State<WelcomePackageScreen> {
                       _listData[selection]["title"],
                       style: Theme.of(context)
                           .textTheme
-                          .headline6
+                          .titleLarge
                           ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -204,17 +162,7 @@ class _WelcomePackageScreenState extends State<WelcomePackageScreen> {
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 10),
-                  // ElevatedButton(
-                  //   onPressed: () {},
-                  //   child: const Text(
-                  //     'Lanjutkan',
-                  //     style: TextStyle(color: Colors.white),
-                  //   ),
-                  //   style:
-                  //       ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  //);
                   BookingButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(

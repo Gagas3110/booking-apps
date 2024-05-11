@@ -49,4 +49,14 @@ class IAuthRepository implements AuthRepository {
       }
     }
   }
+
+  @override
+  Future<LoginResponse> getLoginResponseFromLocal() async {
+    try {
+      final loginData = await _loginLocalDataSource.getDataLoginFromLocal();
+      return loginData;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
