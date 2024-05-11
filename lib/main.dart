@@ -15,6 +15,7 @@ void main() async {
         options: DefaultFirebaseOptions.currentPlatform);
     runApp(const AppWidget());
   } catch (e) {
+    // ignore: avoid_print
     print('Firebase initialization failed : $e');
   }
 }

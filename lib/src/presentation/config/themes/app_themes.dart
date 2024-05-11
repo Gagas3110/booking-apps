@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class AppThemes {
   static ThemeData get bookingThene => ThemeData(
       primarySwatch: Colors.green,
+      primaryColor: Colors.green,
       scaffoldBackgroundColor: Colors.grey.shade100,
       appBarTheme: const AppBarTheme(
         centerTitle: true,
