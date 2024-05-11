@@ -1,5 +1,6 @@
+import 'package:booking_home/src/domain/entities/product.dart';
+import 'package:booking_home/src/domain/i_home_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:booking_home/src/domain/models/product_mdl.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'flash_sale_event.dart';
@@ -8,7 +9,9 @@ part 'flash_sale_state.dart';
 part 'flash_sale_bloc.freezed.dart';
 
 class FlashSaleBloc extends Bloc<FlashSaleEvent, FlashSaleState> {
-  FlashSaleBloc() : super(const FlashSaleState()) {
+  final IHomeRepository repository;
+
+  FlashSaleBloc({required this.repository}) : super(const FlashSaleState()) {
     on<_OnBuild>(_onBuildFlashSale);
   }
 
@@ -18,39 +21,26 @@ class FlashSaleBloc extends Bloc<FlashSaleEvent, FlashSaleState> {
   ) async {
     emit(const FlashSaleState(isLoading: true));
 
-    await Future.delayed(const Duration(seconds: 2));
-
-    emit(
-      const FlashSaleState(
-        isLoading: false,
-        flashSaleProductList: [
-          ProductMdl(
-            name: 'Suede Chukka Boots',
-            company: 'River Island',
-            price: 100000,
+    final result = await repository.getFlashSale();
+    result.fold(
+      (failure) {
+        emit(
+          FlashSaleState(
+            isLoading: false,
+            isError: true,
+            errorMessage: failure.message ?? '',
           ),
-          ProductMdl(
-            name: 'Platform Derby Shoes',
-            company: 'River Island',
-            price: 100000,
+        );
+      },
+      (data) {
+        emit(
+          FlashSaleState(
+            isLoading: false,
+            isError: false,
+            flashSaleProductList: data,
           ),
-          ProductMdl(
-            name: 'Samba',
-            company: 'Adidas',
-            price: 2000000,
-          ),
-          ProductMdl(
-            name: 'Suede Chukka Boots',
-            company: 'River Island',
-            price: 100000,
-          ),
-          ProductMdl(
-            name: 'Platform Derby Shoes',
-            company: 'River Island',
-            price: 100000,
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

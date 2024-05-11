@@ -1,9 +1,8 @@
+import 'package:booking_home/src/domain/entities/product.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/models/product_mdl.dart';
-
 class ProductCard extends StatelessWidget {
-  final ProductMdl product;
+  final Product product;
 
   const ProductCard({
     super.key,
@@ -47,19 +46,19 @@ class ProductCard extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          product.name,
+          product.title ?? '',
           style: const TextStyle(fontWeight: FontWeight.w500),
         ),
         Text(
-          product.company,
+          product.brand ?? '',
           style: const TextStyle(
             fontSize: 12.0,
             fontWeight: FontWeight.w300,
           ),
         ),
-        const Text(
-          'Rp. 100.000', //TODO
-          style: TextStyle(fontWeight: FontWeight.w500),
+        Text(
+          '\$${product.price}',
+          style: const TextStyle(fontWeight: FontWeight.w500),
         ),
       ],
     );
