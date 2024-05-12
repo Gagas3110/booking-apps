@@ -1,10 +1,8 @@
-import 'package:booking_apps/src/presentation/core/utils.dart';
 import 'package:booking_home/booking_home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  setupLocator();
   runApp(const MyApp());
 }
 
