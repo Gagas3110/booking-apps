@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-successSnackBar(String message) {
+successSnackBar(String message, BuildContext context) {
   return SnackBar(
     duration: const Duration(seconds: 5),
+    behavior: SnackBarBehavior.floating,
     content: Text(
       message,
       style: const TextStyle(color: Colors.white, fontSize: 16),
@@ -11,9 +12,10 @@ successSnackBar(String message) {
   );
 }
 
-failSnackBar(String message) {
+failSnackBar(String message, BuildContext ctx) {
   return SnackBar(
     duration: const Duration(seconds: 5),
+    behavior: SnackBarBehavior.floating,
     content: Text(
       message,
       style: const TextStyle(color: Colors.white, fontSize: 16),

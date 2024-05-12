@@ -26,6 +26,8 @@ dependencies:
   logger: ^2.2.0
   retrofit: ^4.1.0
   shared_preferences: ^2.2.3
+  firebase_auth: ^4.19.5
+  firebase_core: ^2.31.0
 
 dev_dependencies:
   flutter_test:

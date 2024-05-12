@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:booking_auth/booking_auth.dart';
 import 'package:booking_auth/presentation/auth/components/booking_button.dart';
 import 'package:booking_auth/presentation/auth/components/booking_button_style.dart';
 import 'package:booking_auth/presentation/auth/components/responsive_sizedbox.dart';
+import 'package:booking_auth/presentation/auth/screen/signup/signup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -166,7 +166,7 @@ class _WelcomePackageScreenState extends State<WelcomePackageScreen> {
                   BookingButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const LoginScreen()));
+                          builder: (context) => const SignupScreen()));
                     },
                     title: 'Lanjutkan',
                     style: PrimaryBookingButtonStyle.style,
