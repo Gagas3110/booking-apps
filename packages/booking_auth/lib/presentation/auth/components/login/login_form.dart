@@ -1,13 +1,12 @@
-
-
-import 'package:booking_auth/domain/auth/entities/login_request.dart';
+import 'package:booking_auth/domain/auth/firebase_auth_request.dart';
 import 'package:booking_auth/presentation/auth/components/booking_button.dart';
 import 'package:booking_auth/presentation/auth/components/booking_button_style.dart';
 import 'package:booking_auth/presentation/auth/components/booking_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../application/login/login_bloc.dart';
+import '../../../../application/login/auth_bloc.dart';
+import '../../../../domain/core/utils/auth_constant.dart';
 
 class LoginForm extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -46,15 +45,21 @@ class LoginForm extends StatelessWidget {
           ),
           const SizedBox(height: 100),
           BookingFormTextField(
-            hint: 'Username',
-            controller: _usernameController,
-            maxLength: 30,
-            inputType: TextInputType.emailAddress,
-            validator: (value) =>
-                value!.isEmpty ? "Please enter username" : null,
-          ),
+              hint: 'Email',
+              controller: _usernameController,
+              maxLength: 30,
+              inputType: TextInputType.emailAddress,
+              validator: (value) {
+                RegExp regExp = RegExp(regExpString);
+                if (!regExp.hasMatch(value!)) {
+                  return 'Please enter your email';
+                } else if (value.isEmpty) {
+                  return "Please enter username";
+                }
+                return null;
+              }),
           const SizedBox(height: 20),
-          BlocBuilder<LoginBloc, LoginState>(
+          BlocBuilder<AuthBloc, AuthState>(
             builder: (context, state) {
               final bool isObscured =
                   state is GetObsecureBool ? state.obs : true;
@@ -68,7 +73,7 @@ class LoginForm extends StatelessWidget {
                     value!.isEmpty ? "Please enter password" : null,
                 suffixIcon: GestureDetector(
                   onTap: () =>
-                      context.read<LoginBloc>().add(CheckObs(isObscured)),
+                      context.read<AuthBloc>().add(CheckObs(isObscured)),
                   child: Icon(
                     isObscured ? Icons.visibility_off : Icons.visibility,
                     color: Colors.grey,
@@ -78,19 +83,19 @@ class LoginForm extends StatelessWidget {
             },
           ),
           const SizedBox(height: 40),
-          BlocBuilder<LoginBloc, LoginState>(
+          BlocBuilder<AuthBloc, AuthState>(
             builder: (context, state) {
               final bool isLoading = state is LoginProgress;
               return BookingButton(
                 isDisabled: isLoading,
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    final body = LoginRequest(
-                      username: _usernameController.text,
+                    final body = FirebaseAuthRequest(
+                      email: _usernameController.text,
                       password: _passwordController.text,
-                      expiresInMins: 30,
+                      //expiresInMins: 30,
                     );
-                    context.read<LoginBloc>().add(LoginSubmiited(body));
+                    context.read<AuthBloc>().add(LoginSubmittedF(body));
                   }
                 },
                 title: 'Login',

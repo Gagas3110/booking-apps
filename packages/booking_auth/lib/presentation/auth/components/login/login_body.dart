@@ -1,9 +1,11 @@
+// ignore_for_file: avoid_print
+
 import 'package:booking_auth/domain/core/extension/booking_auth_extension.dart';
-import 'package:booking_auth/presentation/auth/components/login_form.dart';
+import 'package:booking_auth/presentation/auth/components/login/login_form.dart';
 import 'package:booking_home/booking_home.dart';
 import 'package:flutter/material.dart';
 
-import '../../../application/login/login_bloc.dart';
+import '../../../../application/login/auth_bloc.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -12,15 +14,18 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      body: BlocListener<LoginBloc, LoginState>(
+      body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
+          if (state is LoginSuccessF) {
+            context.succesSnackBar('Login Success');
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => const HomePage(),
             ));
           }
+
           if (state is LoginFailed) {
-            context.failSnackbar(state.failure!.e.toString());
+            print(state.failure.toString());
+            context.failSnackbar(state.failure.toString());
           }
         },
         child: Padding(

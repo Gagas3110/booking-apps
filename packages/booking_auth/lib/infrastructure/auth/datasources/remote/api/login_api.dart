@@ -1,4 +1,4 @@
-import 'package:booking_auth/domain/core/utils/constant.dart';
+import 'package:booking_auth/domain/core/utils/auth_constant.dart';
 import 'package:booking_auth/infrastructure/auth/dto/auth/login_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
