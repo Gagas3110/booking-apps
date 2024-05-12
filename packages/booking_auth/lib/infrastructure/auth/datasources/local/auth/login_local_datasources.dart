@@ -1,4 +1,5 @@
 import 'package:booking_auth/infrastructure/auth/dto/auth/login_dto.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class LoginLocalDataSource {
   ////Get cached data from local memory
@@ -10,4 +11,8 @@ abstract class LoginLocalDataSource {
   ///it cached the received data from outside in the device cache
   ///
   Future<void> cacheLoginInLocalStorage(LoginDto loginDto);
+
+  Future<String> getDataLoginFirebaseFromLocal();
+
+  Future<void> cacheLoginFirebaseInLocalStorage(UserCredential userCred);
 }

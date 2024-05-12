@@ -1,10 +1,8 @@
 import 'package:booking_apps/src/presentation/screen/welcome_package_screen.dart';
-import 'package:booking_auth/application/login/login_bloc.dart';
-import 'package:booking_auth/booking_auth.dart';
+import 'package:booking_auth/application/login/auth_bloc.dart';
 import 'package:booking_auth/injection.dart';
 import 'package:booking_home/booking_home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<LoginBloc>()..add(const ChackLogin()),
+      create: (_) => getIt<AuthBloc>()..add(const CheckLoginF()),
       child: const SplashBody(),
     );
   }
@@ -39,7 +37,7 @@ class _SplashBodyState extends State<SplashBody> {
   @override
   Widget build(BuildContext context) {
     const assetImage = "assets/image/booking_logo.png";
-    return BlocListener<LoginBloc, LoginState>(
+    return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is IsLoginState) {
           Navigator.of(context)

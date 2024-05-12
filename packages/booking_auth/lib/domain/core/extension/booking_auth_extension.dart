@@ -24,13 +24,13 @@ extension SnackBars on BuildContext {
   failSnackbar(String message) {
     ScaffoldMessenger.of(this)
       ..hideCurrentSnackBar()
-      ..showSnackBar(failSnackBar(message));
+      ..showSnackBar(failSnackBar(message, this));
   }
 
   succesSnackBar(String message) {
     ScaffoldMessenger.of(this)
       ..hideCurrentSnackBar()
-      ..showSnackBar(successSnackBar(message));
+      ..showSnackBar(successSnackBar(message, this));
   }
 }
 
