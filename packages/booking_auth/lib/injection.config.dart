@@ -20,7 +20,7 @@ import 'application/login/auth_bloc.dart' as _i15;
 import 'domain/auth/repositories/auth_repository.dart' as _i13;
 import 'domain/core/network/network_info.dart' as _i8;
 import 'infrastructure/auth/datasources/local/auth/i_login_local_datasource.dart'
-    as _i7;
+    as _i8;
 import 'infrastructure/auth/datasources/local/auth/login_local_datasources.dart'
     as _i6;
 import 'infrastructure/auth/datasources/remote/api/login_api.dart' as _i10;
