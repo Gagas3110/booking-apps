@@ -18,9 +18,10 @@ class LoginBody extends StatelessWidget {
         listener: (context, state) {
           if (state is LoginSuccessF) {
             context.succesSnackBar('Login Success');
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const HomePage(),
-            ));
+
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const HomePage()),
+                (Route<dynamic> route) => false);
           }
 
           if (state is LoginFailed) {
