@@ -1,7 +1,9 @@
+import 'package:booking_home/src/application/flash_sale/flash_sale_bloc.dart';
+import 'package:booking_home/src/domain/i_home_repository.dart';
+import 'package:booking_home/src/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../application/flash_sale/flash_sale_bloc.dart';
 import '../widgets/product_card.dart';
 
 class FlashSaleView extends StatelessWidget {
@@ -10,7 +12,9 @@ class FlashSaleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => FlashSaleBloc()..add(const FlashSaleEvent.onBuild()),
+      create: (_) => FlashSaleBloc(
+        repository: di<IHomeRepository>(),
+      )..add(const FlashSaleEvent.onBuild()),
       child: BlocBuilder<FlashSaleBloc, FlashSaleState>(
         builder: (context, state) {
           final flashSaleProductList = state.flashSaleProductList;

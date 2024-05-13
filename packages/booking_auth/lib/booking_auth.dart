@@ -1,7 +1,7 @@
 library booking_auth;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+////export files to root project
+///
+///
+export 'package:booking_auth/presentation/auth/screen/login/login_screen.dart';
+export 'package:firebase_auth/firebase_auth.dart';

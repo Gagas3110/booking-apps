@@ -2,19 +2,42 @@ name: booking_auth
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
+publish_to: "none"
 
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: ">=3.3.3 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
+  dartz: ^0.10.1
+  dio: ^5.4.3+1
   flutter:
     sdk: flutter
+  #packages
+  booking_home:
+    path: ../booking_home
+  flutter_bloc: ^8.1.5
+  freezed_annotation: ^2.4.1
+  get_it: ^7.7.0
+  injectable: ^2.4.1
+  internet_connection_checker: ^1.0.0+1
+  json_annotation: ^4.9.0
+  jwt_decode: ^0.3.1
+  logger: ^2.2.0
+  retrofit: ^4.1.0
+  shared_preferences: ^2.2.3
+  firebase_auth: ^4.19.5
+  firebase_core: ^2.31.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  freezed: ^2.5.2
+  build_runner: ^2.4.9
+  injectable_generator: ^2.6.1
+  json_serializable: ^6.8.0
+  retrofit_generator: ^8.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

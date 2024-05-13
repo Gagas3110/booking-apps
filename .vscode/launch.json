@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "booking apps - feat auth",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "booking apps - feat auth (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "booking apps - feat auth (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "booking_auth",
+            "cwd": "packages/booking_auth",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "booking_auth (profile mode)",
+            "cwd": "packages/booking_auth",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "booking_auth (release mode)",
+            "cwd": "packages/booking_auth",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "booking_home",
+            "cwd": "packages/booking_home",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "booking_home (profile mode)",
+            "cwd": "packages/booking_home",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "booking_home (release mode)",
+            "cwd": "packages/booking_home",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
