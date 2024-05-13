@@ -8,6 +8,7 @@ extension ProductMdlExt on ProductMdl {
       title: title,
       brand: brand,
       price: price,
+      imageUrl: thumbnail,
       discount: discountPercentage,
     );
   }

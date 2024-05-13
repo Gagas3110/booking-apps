@@ -15,6 +15,7 @@ Future<void> runBookingApp({
 }) async {
   configureBookingAuthDepedencies();
   configureBookingHomeDepedencies();
+
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
