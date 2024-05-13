@@ -46,7 +46,7 @@ class ProfileView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const ProfileIcon(
-                    imagePath: 'assets/images/profile/img-default_avatar.png',
+                    imagePath: 'assets/image/profile/img-default_avatar.png',
                     size: 32.0,
                     color: Colors.white,
                   ),
