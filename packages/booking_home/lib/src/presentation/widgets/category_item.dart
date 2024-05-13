@@ -13,7 +13,7 @@ class CategoryItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.teal[100],
+        color: Colors.grey[300],
         borderRadius: BorderRadius.circular(4.0),
       ),
       child: Row(
@@ -22,7 +22,7 @@ class CategoryItem extends StatelessWidget {
           Text(
             name,
             style: const TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const Icon(Icons.chevron_right)

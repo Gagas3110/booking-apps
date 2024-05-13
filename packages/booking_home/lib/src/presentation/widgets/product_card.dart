@@ -24,6 +24,10 @@ class ProductCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.circular(8.0),
+                  image: DecorationImage(
+                    image: NetworkImage(product.imageUrl),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Positioned(
@@ -38,6 +42,7 @@ class ProductCard extends StatelessWidget {
                   child: const Icon(
                     Icons.favorite,
                     size: 18,
+                    color: Colors.red,
                   ),
                 ),
               ),

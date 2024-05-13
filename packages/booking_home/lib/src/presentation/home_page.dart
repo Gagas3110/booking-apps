@@ -12,9 +12,21 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text(
-          'E-stores',
-          style: TextStyle(fontWeight: FontWeight.w600),
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/image/booking_logo.png',
+              width: 30,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              'E-stores',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
       ),
       body: ListView(
