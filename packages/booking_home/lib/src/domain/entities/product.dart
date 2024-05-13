@@ -8,6 +8,7 @@ class Product with _$Product {
     required int id,
     @Default('') String? title,
     @Default('') String? brand,
+    @Default('') String imageUrl,
     @Default(0) int? price,
     @Default(0) double? discount,
   }) = _Product;

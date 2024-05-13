@@ -1,4 +1,5 @@
 import 'package:booking_home/src/domain/i_home_repository.dart';
+import 'package:booking_home/src/infrastructure/extensions/string_ext.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -36,7 +37,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
           CategoryState(
             isLoading: false,
             isError: false,
-            categoryList: data,
+            categoryList: data.map((e) => e.capitalize()).toList(),
           ),
         );
       },

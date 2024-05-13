@@ -1,5 +1,11 @@
+import 'package:booking_home/src/application/banner/banner_bloc.dart';
+import 'package:booking_home/src/domain/i_home_repository.dart';
+import 'package:booking_home/src/injection.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../widgets/banner_widget.dart';
 
 class BannerView extends StatelessWidget {
   const BannerView({
@@ -8,31 +14,42 @@ class BannerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CarouselSlider(
-          options: CarouselOptions(height: 170.0),
-          items: [1, 2, 3, 4, 5].map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(12.0),
-                    margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Text(
-                      'text $i',
-                      style: const TextStyle(fontSize: 16.0),
-                    ));
-              },
+    return BlocProvider(
+      create: (_) => BannerBloc(
+        repository: di<IHomeRepository>(),
+      )..add(const BannerEvent.onBuild()),
+      child: BlocBuilder<BannerBloc, BannerState>(
+        builder: (context, state) {
+          final bannerList = state.bannerList;
+
+          if (state.isLoading) {
+            return const Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
             );
-          }).toList(),
-        ),
-        const SizedBox(height: 24),
-      ],
+          }
+
+          return Column(
+            children: [
+              CarouselSlider(
+                options: CarouselOptions(height: 170.0),
+                items: bannerList.map((banner) {
+                  return Builder(
+                    builder: (context) {
+                      return BannerWidget(
+                        banner: banner,
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
+              const SizedBox(height: 24),
+            ],
+          );
+        },
+      ),
     );
   }
 }
