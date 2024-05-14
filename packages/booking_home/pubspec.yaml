@@ -1,5 +1,6 @@
 name: booking_home
 description: "A new Flutter package project."
+publish_to: "none"
 version: 0.0.1
 homepage:
 
@@ -19,6 +20,8 @@ dependencies:
   dio: ^5.4.3+1
   dartz: ^0.10.1
   get_it: ^7.7.0
+  booking_profile:
+    path: ../../packages/booking_profile
 
 dev_dependencies:
   flutter_test:
