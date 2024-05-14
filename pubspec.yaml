@@ -42,7 +42,7 @@ dependencies:
   firebase: ^9.0.3
   flagsmith: ^5.0.1
   dynatrace_flutter_plugin: ^3.287.2
-  firebase_core: ^2.24.2
+  firebase_core: ^2.31.0
   logger: ^2.2.0
   signature: ^5.4.1
   firebase_crashlytics: ^3.4.9
@@ -57,12 +57,15 @@ dependencies:
   cloud_firestore: ^4.14.0
   flutter_svg: ^2.0.5
   google_fonts: ^4.0.4
+  equatable: ^2.0.5
 
   #packages
   booking_auth:
     path: packages/booking_auth
   booking_home:
     path: packages/booking_home
+  booking_profile:
+    path: packages/booking_profile
 
 dev_dependencies:
   flutter_test:
