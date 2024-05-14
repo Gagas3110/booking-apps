@@ -1,5 +1,5 @@
 import 'package:booking_home/src/presentation/views/category_view.dart';
-import 'package:booking_home/src/presentation/views/profile_view.dart';
+import 'package:booking_profile/booking_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'views/banner_view.dart';
@@ -13,9 +13,21 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text(
-          'E-stores',
-          style: TextStyle(fontWeight: FontWeight.w600),
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/image/booking_logo.png',
+              width: 30,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              'E-stores',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
         actions: [
           Row(

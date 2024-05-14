@@ -13,6 +13,22 @@ class HomeRepository implements IHomeRepository {
   HomeRepository({required this.homeApi});
 
   @override
+  Future<Either<Failure, List<Product>>> getBanners() async {
+    try {
+      final result = await homeApi.getBanners();
+      final products = List<Product>.from(
+        result.products.map((x) => x.toDomain()),
+      );
+
+      return Right(products);
+    } on DioException catch (e) {
+      return Left(Failure.onDio(message: e.message));
+    } on ServerException {
+      return const Left(Failure.onServer());
+    }
+  }
+
+  @override
   Future<Either<Failure, List<String>>> getCategories() async {
     try {
       final result = await homeApi.getCategories();

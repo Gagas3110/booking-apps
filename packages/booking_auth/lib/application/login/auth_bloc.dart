@@ -70,8 +70,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   /// Handles checking Firebase login status
-  Future<void> _checkLoginFirebase(
-      AuthEvent event, Emitter<AuthState> emit) async {
+  Future<void> _checkLoginFirebase(AuthEvent event, Emitter<AuthState> emit) async {
     try {
       if (event is CheckLoginF) {
         _authRepo.authStateChanges();
@@ -87,8 +86,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  FutureOr<void> _loginSubmittedFirebase(
-      AuthEvent event, Emitter<AuthState> emit) async {
+  FutureOr<void> _loginSubmittedFirebase(AuthEvent event, Emitter<AuthState> emit) async {
     emit(const LoginProgress());
     if (event is LoginSubmittedF) {
       final result = await _authRepo.sigInWithEmail(event.model);
@@ -106,8 +104,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   /// Handles creating a Firebase account
-  Future<void> _createAccountFirebase(
-      AuthEvent event, Emitter<AuthState> emit) async {
+  Future<void> _createAccountFirebase(AuthEvent event, Emitter<AuthState> emit) async {
     emit(const CreateUserLoading());
     if (event is CreateAccountFirebase) {
       final result = await _authRepo.createUserFirebase(event.req);
