@@ -13,10 +13,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final GetCurrentLoginUser getCurrentLoginUser;
 
   ProfileBloc({required this.getCurrentLoginUser}) : super(const ProfileState()) {
-    on<_OnBuild>(_onBuildBanner);
+    on<_OnBuild>(_onBuildProfile);
   }
 
-  Future<void> _onBuildBanner(
+  Future<void> _onBuildProfile(
     _OnBuild event,
     Emitter<ProfileState> emit,
   ) async {
