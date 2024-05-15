@@ -1,6 +1,7 @@
 import 'package:booking_home/src/application/category/category_bloc.dart';
 import 'package:booking_home/src/domain/i_home_repository.dart';
 import 'package:booking_home/src/injection.dart';
+import 'package:booking_product_list/booking_product_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -68,7 +69,21 @@ class CategoryView extends StatelessWidget {
                   childAspectRatio: 4 / 1,
                   children: [
                     ...categoryList.take(4).map(
-                          (category) => CategoryItem(name: category),
+                          (category) => CategoryItem(
+                            name: category,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) {
+                                    return ProductsByCategoryPage(
+                                      category: category.toLowerCase(),
+                                    );
+                                  },
+                                ),
+                              );
+                            },
+                          ),
                         ),
                   ],
                 ),
