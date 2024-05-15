@@ -79,6 +79,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  booking_product_list:
+    dependency: "direct main"
+    description:
+      path: "packages/booking_product_list"
+      relative: true
+    source: path
+    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
