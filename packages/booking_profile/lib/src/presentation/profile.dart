@@ -1,9 +1,11 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:booking_profile/injection_container.dart';
-// import 'package:booking_profile/src/domain/usecases/get_popular_movies.dart';
 import 'package:booking_profile/src/presentation/widgets/profile_icon.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:developer';
 
 import '../application/profile/profile_bloc.dart';
 
@@ -11,14 +13,13 @@ class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
   @override
   Widget build(BuildContext context) {
-    // final GetPopularMovies getPopularMoviesRepo;
     return BlocProvider(
       create: (_) => ProfileBloc(getCurrentLoginUser: getIt())..add(const ProfileEvent.onBuild()),
       child: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
-        final name = state.name;
-        final email = state.email;
-        final phoneNumber = state.phoneNumber;
-        final photoURL = state.photoURL;
+        final String? name = state.currentUser?.displayName;
+        final email = state.currentUser?.email ?? 'emaill';
+        final phoneNumber = state.currentUser?.phoneNumber ?? 'phonee';
+        final photoURL = state.currentUser?.photoURL ?? 'photoURLll';
         final isLoading = state.isLoading;
 
         if (isLoading) {
@@ -57,7 +58,8 @@ class ProfileView extends StatelessWidget {
                       Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
                         ProfileIcon(
                           phoneNumber: phoneNumber,
-                          imagePath: photoURL ?? 'https://',
+                          imagePath: photoURL ?? 'http//',
+                          assetImageUrl: 'assets/image/profile/img-default_avatar.png',
                         )
                       ]),
                       const SizedBox(

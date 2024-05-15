@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:booking_auth/domain/auth/entities/login_request.dart';
 
@@ -98,7 +99,8 @@ class IAuthRepository implements AuthRepository {
   @override
   User currentUser() {
     try {
-      final user = _authRemoteDataSource.currentUser;
+      final user = _authRemoteDataSource.currentUser as dynamic;
+      log('user $user');
       return user!;
     } catch (e) {
       rethrow;
