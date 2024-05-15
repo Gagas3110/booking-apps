@@ -72,6 +72,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  booking_common:
+    dependency: "direct main"
+    description:
+      path: "packages/booking_common"
+      relative: true
+    source: path
+    version: "0.0.1"
   booking_home:
     dependency: "direct main"
     description:

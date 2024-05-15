@@ -16,6 +16,8 @@ dependencies:
   #packages
   booking_home:
     path: ../booking_home
+  booking_common:
+    path: ../booking_common
   flutter_bloc: ^8.1.5
   freezed_annotation: ^2.4.1
   get_it: ^7.7.0

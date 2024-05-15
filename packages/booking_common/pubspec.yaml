@@ -1,37 +1,22 @@
-name: booking_home
+name: booking_common
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
-publish_to: "none"
 
 environment:
-  sdk: ">=3.3.3 <4.0.0"
+  sdk: '>=3.3.3 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
+  dio: ^5.4.3+1
   flutter:
     sdk: flutter
-  #packages
-  booking_common:
-    path: ../booking_common
-  flutter_svg: ^2.0.5
-  flutter_bloc: ^8.1.5
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.8.1
-  carousel_slider: ^4.2.1
-  retrofit: ^4.1.0
-  dio: ^5.4.3+1
-  dartz: ^0.10.1
   get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  build_runner: ^2.4.9
-  freezed: ^2.5.2
-  json_serializable: ^6.7.1
-  retrofit_generator: ^8.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

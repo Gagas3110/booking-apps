@@ -63,6 +63,8 @@ dependencies:
     path: packages/booking_auth
   booking_home:
     path: packages/booking_home
+  booking_common:
+    path: packages/booking_common
 
 dev_dependencies:
   flutter_test:

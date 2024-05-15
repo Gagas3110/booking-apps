@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:booking_apps/firebase_options.dart';
 import 'package:booking_auth/injection.dart';
+import 'package:booking_common/booking_common.dart';
 import 'package:booking_home/booking_home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -15,6 +16,7 @@ Future<void> runBookingApp({
 }) async {
   configureBookingAuthDepedencies();
   configureBookingHomeDepedencies();
+  configureBookingCommonDepedencies();
 
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
