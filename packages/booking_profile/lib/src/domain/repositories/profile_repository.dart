@@ -1,4 +1,3 @@
-import 'package:booking_profile/src/domain/entities/user.dart';
 import 'package:booking_profile/src/core/failures.dart';
 import 'package:dartz/dartz.dart';
 

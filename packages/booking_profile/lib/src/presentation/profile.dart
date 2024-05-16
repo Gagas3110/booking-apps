@@ -1,12 +1,12 @@
 import 'package:booking_profile/injection_container.dart';
+import 'package:booking_profile/src/application/profile/profile_bloc.dart';
 import 'package:booking_profile/src/presentation/widgets/profile_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../application/profile/profile_bloc.dart';
-
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

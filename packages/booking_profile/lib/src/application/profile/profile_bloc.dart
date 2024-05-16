@@ -1,4 +1,3 @@
-import 'package:booking_profile/src/domain/entities/user.dart';
 import 'package:booking_profile/src/domain/usecases/get_current_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
