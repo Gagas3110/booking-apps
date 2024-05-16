@@ -48,7 +48,7 @@ class ProfileIcon extends StatelessWidget {
                 width: height,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(height / 2),
-                  child: imagePath == 'http//'
+                  child: imagePath.isEmpty
                       ? Image.asset(assetImageUrl, fit: BoxFit.cover)
                       : CachedNetworkImage(
                           fit: BoxFit.cover,

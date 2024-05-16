@@ -1,9 +1,5 @@
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:booking_profile/injection_container.dart';
 import 'package:booking_profile/src/presentation/widgets/profile_icon.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,9 +13,9 @@ class ProfileView extends StatelessWidget {
       create: (_) => ProfileBloc(getCurrentLoginUser: getIt())..add(const ProfileEvent.onBuild()),
       child: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
         final String? name = state.currentUser?.displayName;
-        final email = state.currentUser?.email ?? 'emaill';
-        final phoneNumber = state.currentUser?.phoneNumber ?? 'phonee';
-        final photoURL = state.currentUser?.photoURL ?? 'photoURLll';
+        final email = state.currentUser?.email ?? '-';
+        final phoneNumber = state.currentUser?.phoneNumber ?? '-';
+        final photoURL = state.currentUser?.photoURL ?? '';
         final isLoading = state.isLoading;
 
         if (isLoading) {
@@ -58,8 +54,8 @@ class ProfileView extends StatelessWidget {
                       Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <Widget>[
                         ProfileIcon(
                           phoneNumber: phoneNumber,
-                          imagePath: photoURL ?? 'http//',
-                          assetImageUrl: 'assets/image/profile/img-default_avatar.png',
+                          imagePath: photoURL,
+                          assetImageUrl: 'assets/image/img-default_avatar.png',
                         )
                       ]),
                       const SizedBox(
@@ -88,7 +84,7 @@ class ProfileView extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        email ?? '-',
+                        email,
                         style: const TextStyle(
                           fontSize: 18,
                         ),
