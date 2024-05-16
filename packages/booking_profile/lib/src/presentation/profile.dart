@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../application/profile/profile_bloc.dart';
 
-class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

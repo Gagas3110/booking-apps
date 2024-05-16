@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ProfileView()),
+                    MaterialPageRoute(builder: (context) => const ProfilePage()),
                   );
                 },
                 child: const Padding(
