@@ -1,6 +1,7 @@
 import 'package:booking_home/src/application/flash_sale/flash_sale_bloc.dart';
 import 'package:booking_home/src/domain/i_home_repository.dart';
 import 'package:booking_home/src/injection.dart';
+import 'package:booking_product_list/booking_product_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,7 +47,14 @@ class FlashSaleView extends StatelessWidget {
                     if (flashSaleProductList.length > 4) ...[
                       GestureDetector(
                         onTap: () {
-                          //TODO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return const AllProductListPage();
+                              },
+                            ),
+                          );
                         },
                         child: const Row(
                           children: [

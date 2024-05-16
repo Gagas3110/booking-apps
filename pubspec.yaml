@@ -66,6 +66,8 @@ dependencies:
     path: packages/booking_home
   booking_profile:
     path: packages/booking_profile
+  booking_product_list:
+    path: packages/booking_product_list
 
 dev_dependencies:
   flutter_test:
