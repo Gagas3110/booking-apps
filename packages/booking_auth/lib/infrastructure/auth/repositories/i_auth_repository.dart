@@ -25,12 +25,10 @@ class IAuthRepository implements AuthRepository {
   final NetworkInfo _networkInfo;
   final LoginLocalDataSource _loginLocalDataSource;
   final IAuthRemoteDataSources _authRemoteDataSource;
-  const IAuthRepository(this._loginApi, this._networkInfo,
-      this._loginLocalDataSource, this._authRemoteDataSource);
+  const IAuthRepository(this._loginApi, this._networkInfo, this._loginLocalDataSource, this._authRemoteDataSource);
 
   @override
-  Future<Either<Failure, LoginResponse>> getLoginResponse(
-      LoginRequest req) async {
+  Future<Either<Failure, LoginResponse>> getLoginResponse(LoginRequest req) async {
     ///Irepository is center or brain of insfrastructure layer
     ///because we decide whether we return fresh data or cached data
     ///based on internet connection
@@ -74,8 +72,7 @@ class IAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, String>> sigInWithEmail(
-      FirebaseAuthRequest req) async {
+  Future<Either<Failure, String>> sigInWithEmail(FirebaseAuthRequest req) async {
     if (await _networkInfo.isConnected) {
       try {
         final data = await _authRemoteDataSource.getDataFromLoginFirebase(req);
@@ -88,8 +85,7 @@ class IAuthRepository implements AuthRepository {
       }
     } else {
       try {
-        final data =
-            await _loginLocalDataSource.getDataLoginFirebaseFromLocal();
+        final data = await _loginLocalDataSource.getDataLoginFirebaseFromLocal();
         return Right(data);
       } on CacheException catch (_) {
         return const Left(Failure.cacheFailure("Cache error"));
@@ -122,8 +118,7 @@ class IAuthRepository implements AuthRepository {
   @override
   Future<String?> getUserTokenAuthFirebase() async {
     try {
-      final userToken =
-          await _loginLocalDataSource.getDataLoginFirebaseFromLocal();
+      final userToken = await _loginLocalDataSource.getDataLoginFirebaseFromLocal();
       return userToken;
     } catch (e) {
       rethrow;
@@ -131,8 +126,7 @@ class IAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, void>> createUserFirebase(
-      FirebaseAuthRequest req) async {
+  Future<Either<Failure, void>> createUserFirebase(FirebaseAuthRequest req) async {
     try {
       await _authRemoteDataSource.createUserFirebase(req);
       return const Right(null);

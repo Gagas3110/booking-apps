@@ -1,4 +1,5 @@
 import 'package:booking_home/src/presentation/views/category_view.dart';
+import 'package:booking_profile/booking_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'views/banner_view.dart';
@@ -28,6 +29,31 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+        actions: [
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfilePage()),
+                  );
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       body: ListView(
         children: const [
