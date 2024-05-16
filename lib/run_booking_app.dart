@@ -6,6 +6,7 @@ import 'package:booking_apps/firebase_options.dart';
 import 'package:booking_auth/injection.dart';
 import 'package:booking_home/booking_home.dart';
 import 'package:booking_product_list/booking_product_list.dart';
+import 'package:booking_profile/booking_profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -17,13 +18,12 @@ Future<void> runBookingApp({
   configureBookingAuthDepedencies();
   configureBookingHomeDepedencies();
   configureBookingProductListDepedencies();
+  configureBookingProfileDepedencies();
 
-  SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
   try {
-    await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform);
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
     // Set up Crashlytics
     FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
     // Set up error handler

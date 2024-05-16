@@ -1,4 +1,4 @@
-# booking_apps
+# booking_profile
 
 A new Flutter project.
 
@@ -11,15 +11,6 @@ A few resources to get you started if this is your first Flutter project:
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-## run 
-
-- run first_run.sh
-- flutter run lib/main.dart (Type r for Hot Reloaded)
-
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-## Create Packages
-
-- flutter create --template=package urNamePackages

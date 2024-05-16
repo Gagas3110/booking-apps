@@ -1,8 +1,8 @@
-name: booking_apps
-description: A new Flutter project.
+name: booking_profile
+description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.3.3 <4.0.0"
+  sdk: '>=3.3.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,43 +31,22 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
   flutter_bloc: ^8.1.5
+  freezed_annotation: ^2.4.1
   get_it: ^7.6.0
-  dio: ^5.4.3+1
-  retrofit: ^4.1.0
-  freezed: ^2.4.1
-  firebase: ^9.0.3
-  flagsmith: ^5.0.1
-  dynatrace_flutter_plugin: ^3.287.2
-  firebase_core: ^2.31.0
-  logger: ^2.2.0
-  signature: ^5.4.1
-  firebase_crashlytics: ^3.4.9
-  firebase_messaging: ^14.7.10
-  firebase_remote_config: ^4.3.8
-  firebase_analytics: ^10.8.0
-  opentelemetry: ^0.18.2
-  rive: ^0.13.2
-  firebase_database: ^10.4.0
-  flutter_local_notifications: ^17.1.0
-  getwidget: ^4.0.0
-  cloud_firestore: ^4.14.0
-  flutter_svg: ^2.0.5
-  google_fonts: ^4.0.4
+  dartz: ^0.10.1
+  http: ^0.13.3
   equatable: ^2.0.5
-
-  #packages
+  shared_preferences: ^2.2.3
+  firebase_auth: ^4.19.5
+  url_launcher: ^6.2.6
+  cached_network_image: ^3.3.1
   booking_auth:
-    path: packages/booking_auth
-  booking_home:
-    path: packages/booking_home
-  booking_profile:
-    path: packages/booking_profile
-  booking_product_list:
-    path: packages/booking_product_list
+    path: ../../packages/booking_auth
 
 dev_dependencies:
   flutter_test:
@@ -78,26 +57,25 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.2
+  flutter_lints: ^3.0.0
+  freezed: ^2.5.2
+  build_runner: ^2.4.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
+  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
     - assets/image/
-
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
