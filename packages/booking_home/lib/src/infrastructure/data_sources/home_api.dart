@@ -16,6 +16,6 @@ abstract class HomeApi {
   Future<List<String>> getCategories();
 
   // might want to change endpoint for get banner
-  @GET('/category/fragrances?limit=5')
+  @GET('/category/womens-watches?limit=5')
   Future<FlashSaleResponse> getBanners();
 }
