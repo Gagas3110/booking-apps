@@ -34,7 +34,13 @@ class BannerView extends StatelessWidget {
           return Column(
             children: [
               CarouselSlider(
-                options: CarouselOptions(height: 170.0),
+                options: CarouselOptions(
+                  height: 170.0,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 3),
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.2,
+                ),
                 items: bannerList.map((banner) {
                   return Builder(
                     builder: (context) {
