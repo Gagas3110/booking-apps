@@ -1,6 +1,7 @@
 import 'package:booking_home/booking_home.dart' hide di;
 
 import 'package:booking_product_list/src/application/product_list/product_list_bloc.dart';
+import 'package:booking_product_list/src/infrastructure/extensions/string_ext.dart';
 import 'package:booking_product_list/src/injection.dart';
 import 'package:flutter/material.dart';
 
@@ -29,8 +30,7 @@ class _ProductsByCategoryPageState extends State<ProductsByCategoryPage> {
     scrollController = ScrollController();
 
     scrollController.addListener(() {
-      if (scrollController.position.pixels ==
-          scrollController.position.maxScrollExtent) {
+      if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
         productListBloc.add(const ProductListEvent.onLoadAllProducts());
       }
     });
@@ -56,7 +56,7 @@ class _ProductsByCategoryPageState extends State<ProductsByCategoryPage> {
             appBar: AppBar(
               foregroundColor: Colors.black,
               title: Text(
-                widget.category,
+                widget.category.capitalize(),
                 style: const TextStyle(
                   fontWeight: FontWeight.w500,
                 ),
