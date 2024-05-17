@@ -56,6 +56,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  booking_common:
+    dependency: transitive
+    description:
+      path: "../booking_common"
+      relative: true
+    source: path
+    version: "0.0.1"
   booking_home:
     dependency: transitive
     description:
