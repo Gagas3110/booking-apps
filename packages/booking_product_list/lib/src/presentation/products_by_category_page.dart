@@ -1,4 +1,4 @@
-import 'package:booking_home/booking_home.dart' hide di;
+import 'package:booking_home/booking_home.dart';
 
 import 'package:booking_product_list/src/application/product_list/product_list_bloc.dart';
 import 'package:booking_product_list/src/infrastructure/extensions/string_ext.dart';

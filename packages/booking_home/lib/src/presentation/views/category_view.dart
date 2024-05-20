@@ -1,3 +1,4 @@
+import 'package:booking_category_list/booking_category_list.dart';
 import 'package:booking_home/src/application/category/category_bloc.dart';
 import 'package:booking_home/src/domain/i_home_repository.dart';
 import 'package:booking_home/src/injection.dart';
@@ -47,7 +48,14 @@ class CategoryView extends StatelessWidget {
                     if (categoryList.length > 4) ...[
                       GestureDetector(
                         onTap: () {
-                          //TODO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return const CategoryListPage();
+                              },
+                            ),
+                          );
                         },
                         child: const Row(
                           children: [
