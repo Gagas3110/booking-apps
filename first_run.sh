@@ -23,6 +23,11 @@ cd ../booking_product_list
 install_packages "booking_product_list"
  flutter pub run build_runner build --delete-conflicting-outputs
 
+ # Install packages for booking_category_list
+cd ../booking_category_list
+install_packages "booking_category_list"
+ flutter pub run build_runner build --delete-conflicting-outputs
+
 # Install packages for booking_profile
 cd ../booking_profile
 install_packages "booking_profile"

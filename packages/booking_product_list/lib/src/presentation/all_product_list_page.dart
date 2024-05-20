@@ -1,4 +1,4 @@
-import 'package:booking_home/booking_home.dart' hide di;
+import 'package:booking_home/booking_home.dart';
 
 import 'package:booking_product_list/src/application/product_list/product_list_bloc.dart';
 import 'package:booking_product_list/src/injection.dart';
@@ -24,8 +24,7 @@ class _AllProductListPageState extends State<AllProductListPage> {
     scrollController = ScrollController();
 
     scrollController.addListener(() {
-      if (scrollController.position.pixels ==
-          scrollController.position.maxScrollExtent) {
+      if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
         productListBloc.add(const ProductListEvent.onLoadAllProducts());
       }
     });

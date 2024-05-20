@@ -11,8 +11,7 @@ part 'product_list_bloc.freezed.dart';
 class ProductListBloc extends Bloc<ProductListEvent, ProductListState> {
   final IProductListRepository repository;
 
-  ProductListBloc({required this.repository})
-      : super(const ProductListState()) {
+  ProductListBloc({required this.repository}) : super(const ProductListState()) {
     on<_OnLoadAllProducts>(_onLoadAllProductList);
     on<_OnLoadProductsByCategory>(_onLoadProductListByCategory);
     on<_OnResetState>(_onResetState);
