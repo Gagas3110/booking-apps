@@ -27,6 +27,7 @@ dependencies:
     path: ../booking_profile
   booking_product_list:
     path: ../booking_product_list
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

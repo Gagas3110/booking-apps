@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/product_card.dart';
+import 'flash_sale_view_shimmer.dart';
 
 class FlashSaleView extends StatelessWidget {
   const FlashSaleView({super.key});
@@ -19,16 +20,9 @@ class FlashSaleView extends StatelessWidget {
       child: BlocBuilder<FlashSaleBloc, FlashSaleState>(
         builder: (context, state) {
           final flashSaleProductList = state.flashSaleProductList;
-
           if (state.isLoading) {
-            return const Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
+            return const FlashSaleShimmer();
           }
-
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Column(

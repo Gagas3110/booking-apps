@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/category_item.dart';
+import 'category_view_shimmer.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});
@@ -23,9 +24,10 @@ class CategoryView extends StatelessWidget {
           if (state.isLoading) {
             return const Padding(
               padding: EdgeInsets.all(12.0),
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
+              child: CategoryViewShimmer(),
+              // Center(
+              //   child: CircularProgressIndicator(),
+              // ),
             );
           }
 
@@ -46,9 +48,7 @@ class CategoryView extends StatelessWidget {
                     ),
                     if (categoryList.length > 4) ...[
                       GestureDetector(
-                        onTap: () {
-                          //TODO
-                        },
+                        onTap: () {},
                         child: const Row(
                           children: [
                             Text('See All'),
