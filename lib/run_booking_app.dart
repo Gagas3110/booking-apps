@@ -16,6 +16,7 @@ import 'package:flutter/services.dart';
 Future<void> runBookingApp({
   required Widget home,
 }) async {
+  //configure all depedencies injection from this packages
   configureBookingAuthDepedencies();
   configureBookingHomeDepedencies();
   configureBookingCommonDepedencies();

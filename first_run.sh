@@ -28,4 +28,14 @@ cd ../booking_profile
 install_packages "booking_profile"
  flutter pub run build_runner build --delete-conflicting-outputs
 
+ # Install packages for booking_common
+cd ../booking_common
+install_packages "booking_common"
+ flutter pub run build_runner build --delete-conflicting-outputs
+
+ # Install packages for booking_product_list
+cd ../booking_product_list
+install_packages "booking_product_list"
+ flutter pub run build_runner build --delete-conflicting-outputs 
+
 echo "All packages installed successfully!"

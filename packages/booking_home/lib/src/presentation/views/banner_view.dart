@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/banner_widget.dart';
+import 'banner_view_shimmer.dart';
 
 class BannerView extends StatelessWidget {
   const BannerView({
@@ -23,12 +24,7 @@ class BannerView extends StatelessWidget {
           final bannerList = state.bannerList;
 
           if (state.isLoading) {
-            return const Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
+            return const BannerViewShimmer();
           }
 
           return Column(
