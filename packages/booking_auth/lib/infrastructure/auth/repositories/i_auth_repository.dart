@@ -46,8 +46,8 @@ class IAuthRepository implements AuthRepository {
         ///because DTO extends from entity and then will be parsed automatically
         ///but, i'll be place the code commented below how to convert it manually (if u want do it manually)
 
-        ///final albumsConverted = albumsData.map((e) => e.toDomain()).toList();
-        ///return Right(albumsConverted);
+        ///final loginConverted = loginData.map((e) => e.toDomain()).toList();
+        ///return Right(loginConverted);
       } on ServerException {
         return const Left(Failure.serverFailure(serverFailureMessages));
       }
